@@ -5,6 +5,7 @@ func maxSlidingWindow(nums []int, k int) []int {
 	}
 	stack := []int{}
 	push := func(i int) {
+		// 注意用for
 		for len(stack) > 0 && nums[stack[len(stack)-1]] < nums[i] {
 			stack = stack[:len(stack)-1]
 		}
@@ -13,6 +14,7 @@ func maxSlidingWindow(nums []int, k int) []int {
 	for i := 0; i < k; i++ {
 		push(i)
 	}
+	// res的值都nums的元素
 	res := []int{nums[stack[0]]}
 	for i := k; i < n; i++ {
 		push(i)
