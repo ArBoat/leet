@@ -14,3 +14,5 @@ func canConstruct(ransomNote string, magazine string) bool {
 	}
 	return true
 }
+
+// 分组+hash
